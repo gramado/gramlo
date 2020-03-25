@@ -434,8 +434,8 @@ StartKernelEntry:
 	; #obs:
 	; Sem o header do multiboot. 
 	
-	jmp CODE_SEL:0xC0001000 
-	jmp $
+    jmp CODE_SEL:0xC0001000 
+    jmp $
 
 
 

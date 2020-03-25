@@ -230,14 +230,18 @@ void BlMain (){
 //done:
 
 	// Debug message.
+	
+	// # important:
+	// Comming back to head.s
+	// haed.s will jmp to the kernel image.
 
-#ifdef BL_VERBOSE	
+//#ifdef BL_VERBOSE	
     printf ("BlMain: Done\n");
     //printf ("BlMain: LFB={%x} \n",g_lbf_pa);
     //printf ("#DEBUG: *HANG\n");
     refresh_screen ();
     //while(1){};
-#endif
+//#endif
 
 }
 
