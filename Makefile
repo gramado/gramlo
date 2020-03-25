@@ -120,11 +120,11 @@ build-boot:
 
 	@echo "==================="
 	@echo "Compiling BM ... "
-	$(Q) $(MAKE) -C boot/x86/bm/ 
+	$(Q) $(MAKE) -C x86/bm/ 
 
 	@echo "==================="
 	@echo "Compiling BL ... "
-	$(Q) $(MAKE) -C boot/x86/bl/ 
+	$(Q) $(MAKE) -C x86/bl/ 
 
 
 
@@ -150,7 +150,7 @@ vhd-create:
 	@echo "================================="
 	@echo "(Step 4) Creating a VHD in Assembly language ..."
 
-	$(NASM) boot/x86/vhd/main.asm -I boot/x86/vhd/ -o ANIMAL.VHD   
+	$(NASM) x86/vhd/main.asm -I x86/vhd/ -o ANIMAL.VHD   
 	
 
 
@@ -173,8 +173,8 @@ vhd-copy-files:
 	# First of all
 	# bm, bl, kernel, init, gdeshell.
 
-	sudo cp boot/x86/bin/BM.BIN    /mnt/gramadovhd
-	sudo cp boot/x86/bin/BL.BIN    /mnt/gramadovhd
+	sudo cp x86/bin/BM.BIN    /mnt/gramadovhd
+	sudo cp x86/bin/BL.BIN    /mnt/gramadovhd
 	sudo cp kernel/KERNEL.BIN      /mnt/gramadovhd
 
 
@@ -189,10 +189,9 @@ vhd-copy-files:
 
 
 # ======== Files in the /BOOT/ folder. ========
-	sudo cp boot/x86/bin/BM.BIN  /mnt/gramadovhd/BOOT
-	sudo cp boot/x86/bin/BL.BIN  /mnt/gramadovhd/BOOT
+	sudo cp x86/bin/BM.BIN  /mnt/gramadovhd/BOOT
+	sudo cp x86/bin/BL.BIN  /mnt/gramadovhd/BOOT
 	sudo cp kernel/KERNEL.BIN    /mnt/gramadovhd/BOOT
-
 
 
 
@@ -225,7 +224,7 @@ clean-system-files:
 	@echo "==================="
 	@echo "Cleaning all system binaries ..."
 
-	-rm -rf boot/x86/bin/*.BIN
+	-rm -rf x86/bin/*.BIN
 	
 	-rm -rf kernel/KERNEL.BIN
 # ...
